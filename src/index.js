@@ -4,11 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let user = {
+  fName:"Thaabit",
+  lName:"Jacobs",
+}
+
+function formatter(user){
+  return user.fName + " " + user.lName;
+}
+
+const  nameElement  = (
+  <h1>
+    Hello there, {formatter(user)} welcome to React
+  </h1>
+);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  nameElement,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
