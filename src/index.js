@@ -22,6 +22,7 @@ const element = (
   </div>
 );
 
+/*
 const btn = document.querySelector("button");
 btn.addEventListener("click", () => {
   const counterElment = (
@@ -35,9 +36,25 @@ btn.addEventListener("click", () => {
     document.getElementById("root")
   );
 })
+*/
 
+/*
+class Welcome extends React.Component{
+  render () {
+    return <h1>Hello {this.props.name} welcome to your first Component</h1>
+  }
+}
+*/
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+function Welcome(props){
+  return <h1>Hello {props.name} {props.surname} welcome to your first Component you are {props.age} old right</h1>
+}
+
+const welcomeThaabit = <Welcome name="Thaabit" surname="Jacobs" age="23"/>;
+
+ReactDOM.render(
+  welcomeThaabit,
+  document.getElementById("root")
+);
+
 reportWebVitals();
