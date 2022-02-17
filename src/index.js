@@ -46,11 +46,18 @@ class Welcome extends React.Component{
 }
 */
 
-function Welcome(props){
-  return <h1>Hello {props.name} {props.surname} welcome to your first Component you are {props.age} old right</h1>
+let user = {
+  name: "Thaabit",
+  surname: "Jacobs",
+  age: 27
 }
 
-const welcomeThaabit = <Welcome name="Thaabit" surname="Jacobs" age="23"/>;
+function Welcome(props){
+  return 
+    <h1>Hello {props.name} {props.surname} welcome to your first Component you are {props.age} old right</h1>
+}
+
+const welcomeThaabit = <Welcome person={user}/>;
 
 ReactDOM.render(
   welcomeThaabit,
