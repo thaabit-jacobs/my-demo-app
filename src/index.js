@@ -46,22 +46,43 @@ class Welcome extends React.Component{
 }
 */
 
-let user = {
-  name: "Thaabit",
-  surname: "Jacobs",
-  age: 27
-}
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
 
-function Welcome(props){
-  return 
-    <h1>Hello {props.name} {props.surname} welcome to your first Component you are {props.age} old right</h1>
-}
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+  
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
 
-const welcomeThaabit = <Welcome person={user}/>;
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-  welcomeThaabit,
-  document.getElementById("root")
+  <Clock />,
+  document.getElementById('root')
 );
+
 
 reportWebVitals();
