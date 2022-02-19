@@ -79,19 +79,19 @@ class Clock extends React.Component {
   }
 }
 
-function App(){
+function AppClock(){
   return (
     <div>
-<Clock />
-<Clock />
-<Clock />
-<Clock />
+      <Clock />
+      <Clock />
+      <Clock />
+      <Clock />
     </div>
   )
 }
 
 ReactDOM.render(
-  <App />,
+  <AppClock />,
   document.getElementById('root')
 );
 
