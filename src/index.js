@@ -57,7 +57,7 @@ class Clock extends React.Component {
       date: new Date()
     });
   }
-  
+
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
@@ -79,8 +79,19 @@ class Clock extends React.Component {
   }
 }
 
+function App(){
+  return (
+    <div>
+<Clock />
+<Clock />
+<Clock />
+<Clock />
+    </div>
+  )
+}
+
 ReactDOM.render(
-  <Clock />,
+  <App />,
   document.getElementById('root')
 );
 
